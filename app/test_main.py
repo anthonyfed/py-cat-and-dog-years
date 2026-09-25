@@ -26,3 +26,8 @@ def test_get_human_age(
 def test_rejects_negative_age() -> None:
     with pytest.raises(ValueError):
         get_human_age(-1, -1)
+
+
+def test_rejects_invalid_types() -> None:
+    with pytest.raises(TypeError):
+        get_human_age("15", "15")
