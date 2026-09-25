@@ -5,14 +5,22 @@ import pytest
 @pytest.mark.parametrize(
     "cat_age, dog_age, result",
     [
-        pytest.param(0,0, [0, 0], id="age boundaries equal to 0 if 0 year old"),
-        pytest.param(14, 14, [0, 0], id="age boundaries equal to 0 if 14 years old"),
-        pytest.param(15, 15, [1, 1], id="age boundaries equal to 1 if 15 years old"),
-        pytest.param(23, 23, [1, 1], id="age boundaries equal to 1 if 23 years old"),
-        pytest.param(24, 24, [2, 2], id="age boundaries equal to 2 if 24 years old"),
-        pytest.param(27, 27, [2, 2], id="age boundaries equal to 2 if 27 years old"),
-        pytest.param(28, 28, [3, 2], id="age boundaries equal to 3 cat years and 2 dog years if 28 years old"),
-        pytest.param(100, 100, [21, 17], id="age boundaries equal to [21, 17] if 100 years old")
+        pytest.param(0, 0, [0, 0],
+                     id="age boundaries equal to 0 if 0 year old"),
+        pytest.param(14, 14, [0, 0],
+                     id="age boundaries equal to 0 if 14 years old"),
+        pytest.param(15, 15, [1, 1],
+                     id="age boundaries equal to 1 if 15 years old"),
+        pytest.param(23, 23, [1, 1],
+                     id="age boundaries equal to 1 if 23 years old"),
+        pytest.param(24, 24, [2, 2],
+                     id="age boundaries equal to 2 if 24 years old"),
+        pytest.param(27, 27, [2, 2],
+                     id="age boundaries equal to 2 if 27 years old"),
+        pytest.param(28, 28, [3, 2],
+                     id="age boundaries equal to 3 and 2 dog years if 28"),
+        pytest.param(100, 100, [21, 17],
+                     id="age boundaries equal to [21, 17] if 100 years old")
     ]
 )
 def test_get_human_age(
